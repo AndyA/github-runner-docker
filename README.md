@@ -6,6 +6,8 @@ docker secret create github-ci-secret.sh secret.sh
 ```
 
 ```sh
-docker-compose build --build-arg ARCH=arm
-docker stack deploy -c docker-compose.yml -c docker-compose.dev.yml programme-index
+export ARCH=arm
+docker-compose build --build-arg ARCH=$ARCH
+docker-compose push
+docker stack deploy -c docker-compose.yml github-runner
 ```
