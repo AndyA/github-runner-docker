@@ -1,0 +1,71 @@
+version: "3.9"
+
+secrets:
+  github-ci-secret.sh:
+    external: true
+
+services:
+  jsonpath-faster-runner:
+    image: jsonpath-faster-runner
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      USER: AndyA
+      REPO: jsonpath-faster
+    secrets:
+      - github-ci-secret.sh
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 256M
+  jsonpath-lifter-runner:
+    image: jsonpath-lifter-runner
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      USER: AndyA
+      REPO: jsonpath-lifter
+    secrets:
+      - github-ci-secret.sh
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 256M
+  node-bktree-fast-runner:
+    image: node-bktree-fast-runner
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      USER: AndyA
+      REPO: node-bktree-fast
+    secrets:
+      - github-ci-secret.sh
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 256M
+  encoding-sleuth-runner:
+    image: encoding-sleuth-runner
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      USER: AndyA
+      REPO: encoding-sleuth
+    secrets:
+      - github-ci-secret.sh
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 256M

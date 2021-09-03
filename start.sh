@@ -3,9 +3,11 @@
 # Required env:
 #   USER - github username
 #   REPO - repo
-#   PAT  - github personal access token
 
 set -e
+
+# Get PAT from secret
+source "/run/secrets/github-ci-secret.sh"
 
 cd /home/docker/actions-runner
 

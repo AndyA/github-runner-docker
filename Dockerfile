@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # github runner version
 ARG RV="2.280.3"
-ARG ARCH="arm"
+ARG ARCH="x64"
 ARG BASE="https://github.com/actions/runner/releases/download"
 
 RUN apt-get update -y && apt-get upgrade -y && useradd -m docker
