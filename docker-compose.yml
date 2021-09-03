@@ -6,7 +6,7 @@ secrets:
 
 services:
   jsonpath-faster-runner:
-    image: jsonpath-faster-runner
+    image: stilt:5000/jsonpath-faster-runner
     build:
       context: .
     restart: unless-stopped
@@ -22,7 +22,7 @@ services:
         limits:
           memory: 256M
   jsonpath-lifter-runner:
-    image: jsonpath-lifter-runner
+    image: stilt:5000/jsonpath-lifter-runner
     build:
       context: .
     restart: unless-stopped
@@ -38,7 +38,7 @@ services:
         limits:
           memory: 256M
   node-bktree-fast-runner:
-    image: node-bktree-fast-runner
+    image: stilt:5000/node-bktree-fast-runner
     build:
       context: .
     restart: unless-stopped
@@ -54,7 +54,7 @@ services:
         limits:
           memory: 256M
   encoding-sleuth-runner:
-    image: encoding-sleuth-runner
+    image: stilt:5000/encoding-sleuth-runner
     build:
       context: .
     restart: unless-stopped
