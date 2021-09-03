@@ -3,7 +3,7 @@
 # Required env:
 #   USER - github username
 #   REPO - repo
-#   REG_TOKEN - runner reg token
+#   PAT  - github personal access token
 
 set -e
 
@@ -15,7 +15,7 @@ URL="https://api.github.com/repos/$USER/$REPO/actions/runners/registration-token
 
 echo "Requesting registration token from $URL"
 
-payload=$(curl -sX POST -H "Authorization: token ${PAT}" ${URL})
+payload=$(curl -sX POST -H "Authorization: token $PAT" $URL)
 export REG_TOKEN=$(echo $payload | jq .token --raw-output)
 
 ./config.sh --unattended --url https://github.com/$USER/$REPO --token $REG_TOKEN
