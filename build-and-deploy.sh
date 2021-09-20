@@ -19,7 +19,8 @@ case $arch in
     ;;
 esac
 
-export $ARCH
+export ARCH
+echo "Build for $ARCH"
 
 docker-compose build --build-arg ARCH=$ARCH
 docker-compose push
