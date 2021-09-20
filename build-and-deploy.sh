@@ -11,7 +11,7 @@ case $arch in
     ARCH=arm64
     ;;
   x86_64)
-    ARCH=x86
+    ARCH=x64
     ;;
   *)
     echo "Unknown arch: $arch" 1>&2
