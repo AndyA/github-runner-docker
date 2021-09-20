@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 # github runner version
-ARG RV="2.280.3"
+ARG RV="2.283.1"
 ARG ARCH="x64"
 ARG BASE="https://github.com/actions/runner/releases/download"
 
