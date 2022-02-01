@@ -69,3 +69,19 @@ services:
       resources:
         limits:
           memory: 256M
+  state-sequence-store-runner: 
+    image: stilt:5000/state-sequence-store-runner-${ARCH}
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      USER: AndyA
+      REPO: state-sequence-store
+    secrets:
+      - github-ci-secret.sh
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          memory: 256M
