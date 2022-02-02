@@ -6,7 +6,7 @@ RUN apt-get install -y curl jq build-essential libssl-dev libffi-dev \
     python3 python3-venv python3-dev
 
 # github runner version
-ARG RV="2.286.1"
+ARG RV="2.287.1"
 ARG ARCH="x64"
 ARG BASE="https://github.com/actions/runner/releases/download"
 
